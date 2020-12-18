@@ -12,64 +12,134 @@
 
 <body>
     <header>
-        <h1>MySite</h1>
-        <h3>Slogan go here...</h3>
+
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">HHCBD</span> Luxury</h1>
+        </div>
+        <nav>
+          <ul>
+            <li class="current"><a href="index.html">Trang chủ</a></li>
+            <li><a href="ưu đãi.html">Ưu đãi</a></li>
+            <li><a href="giới thiệu.html">Giới thiệu</li>
+			<li><a href="món ăn.html">Món Ăn</a></li>
+			<li><a href="bản đồ.html">Bản đồ</a></li>
+			<li><a href="đăng nhập.html">Đăng nhập</a></li>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script>
+
+$(document).ready(function() {
+
+
+
+    var div = $('#header');
+
+    var start = $(div).offset().top;
+
+
+
+    $.event.add(window, "scroll", function() {
+
+        var p = $(window).scrollTop();
+
+        $(div).css('position',((p)>start) ? 'fixed' : 'static');
+
+        $(div).css('top',((p)>start) ? '0px' : '');
+
+    });
+
+
+
+});
+
+</script>
+          </ul>
+        </nav>
+      </div>
     </header>
-    <nav>
-        <ul>
-            <li><a data-section="home">Home</a></li>
-            <li><a data-section="services">Services</a></li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Products</a>
-                <div class="dropdown-content">
-                    <a data-section="link1">Link 1</a>
-                    <a data-section="link2">Link 2</a>
-                    <a data-section="link3">Link 3</a>
-                </div>
-            </li>
-            <li style="float:right"><a data-section="about">About us</a></li>
-        </ul>
-    </nav>
+     <section id="boxes">
+      <div class="container">
+        <div id="slides" class="carousel slide" data-ride="carousel">
+		<ul class="carousel-indicators">
+			<li data-target="#slides" data-slide-to="0" class="active"></li>
+			<li data-target="#slides" data-slide-to="1" ></li>
+			<li data-target="#slides" data-slide-to="2" ></li>
 
-    <section id="home" class="hideable-section">
-        <div>Home content</div>
+		</ul>
+		<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="./img/120013129.jpg" class="container" width="800" height="550">
+					<div class="carousel-caption">
+						<h1>Khu vực lễ tân</h1>
+					</div>
+				</div>
+				<div class="carousel-item ">
+					<img src="./img/120276106.jpg" class="container" width="800" height="550">
+					<div class="carousel-caption">
+						<h1>Phòng ngủ</h1>
+
+					</div>
+				</div>
+				<div class="carousel-item ">
+					<img src="./img/120276107.jpg" class="container" width="800" height="550">
+					<div class="carousel-caption">
+						<h1>Phòng họp, hội nghị</h1>
+					</div>
+				</div>
+
+				<a class="carousel-control-prev" href="#slides" data-slide="prev">
+				<span class="carousel-control-prev-icon"></span>
+				</a>
+				<a class="carousel-control-next" href="#slides" data-slide="next">
+				<span class="carousel-control-next-icon"></span>
+				</a>
+		</div>
+		</div>
+	  </section>
+
+    <section id="boxes">
+      <div class="container">
+        <div class="box">
+          <img src="./img/socialgood-icon.png">
+          <h3>Website</h3>
+          <p>www.HHCBDluxury.com </p>
+        </div>
+        <div class="box">
+          <img src="./img/icon-home-cam.png">
+          <h3>Địa chỉ</h3>
+          <p>KHÁCH SẠN HHCBD Luxury <br>
+		    Liền kề 689 , khu đô thị VinCity, An Khánh, Hoài Đức, Hà Nội<br>
+			Tel: 0238 3737 789<br>
+			Fax: 0238 3737 789<br>
+			Email: HHCBDluxyry@gmail.com</p>
+        </div>
+        <aside id="sidebar">
+          <div class="dark">
+            <h3>Nhận thông báo</h3>
+            <form class="quote">
+  						<div>
+  							<label>Tên</label><br>
+  							<input type="text" placeholder="họ và tên">
+  						</div>
+  						<div>
+  							<label>Địa chỉ</label><br>
+  							<input type="email" placeholder="địa chỉ">
+  						</div>
+  						<div>
+  							<label>Chat</label><br>
+  							<textarea placeholder="chat"></textarea>
+  						</div>
+  						<button class="button_1" type="submit">Gửi</button>
+			</form>
+          </div>
+        </aside>
+      </div>
     </section>
 
-    <section id="services" class="hideable-section">
-        <div>Services content</div>
-    </section>
-
-    <section id="about" class="hideable-section">
-        <div>About content</div>
-    </section>
-
-    <section id="link1" class="hideable-section">
-        <div>Link1 content</div>
-    </section>
-
-    <section id="link2" class="hideable-section">
-        <div>Link2 content</div>
-    </section>
-
-    <section id="link3" class="hideable-section">
-        <div>Link3 content</div>
-    </section>
-
-    <script>
-        $(function() {
-            $('nav ul li a').click(function() {
-                // Lấy section để hiển thị
-                var $section = $('#' + $(this).data('section'));
-
-                // Nếu đang hiện thì không làm gì.
-                // Nếu không, ẩn tất cả các se cho hiện (kiểu fade in) phần mong muốn.
-                if (!$section.is(':visible')) {
-                    $('.hideable-section').hide();
-                    $section.fadeIn();
-                }
-            });
-        });
-    </script>
-</body>
-
+    <footer>
+      <p>HHCBD TEAM, developer & copy 2020</p>
+    </footer>
+  </body>
 </html>
