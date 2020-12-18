@@ -1,17 +1,14 @@
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <link rel="StyleSheet" href="./css/style.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-</head>
-<body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+		<title>HHCBD Luxury | Welcome</title>
+		<link rel="stylesheet" href="./css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
     <header>
-	
+
       <div class="container">
         <div id="branding">
           <h1><span class="highlight">HHCBD</span> Luxury</h1>
@@ -24,57 +21,40 @@
 			<li><a href="món ăn.html">Món Ăn</a></li>
 			<li><a href="bản đồ.html">Bản đồ</a></li>
 			<li><a href="đăng nhập.html">Đăng nhập</a></li>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script>
+
+$(document).ready(function() {
+
+
+
+    var div = $('#header');
+
+    var start = $(div).offset().top;
+
+
+
+    $.event.add(window, "scroll", function() {
+
+        var p = $(window).scrollTop();
+
+        $(div).css('position',((p)>start) ? 'fixed' : 'static');
+
+        $(div).css('top',((p)>start) ? '0px' : '');
+
+    });
+
+
+
+});
+
+</script>
           </ul>
         </nav>
       </div>
     </header>
-<div class="container intros" id="service">
-        <div class="row row1">
-            <div class="col-xs-12 col-sm-6">
-                <hr style="float:left; width:20em; border-top: 0.1em gray solid">
-                <div style="clear: both;"></div>
-                <h1>Giới Thiệu</h1>
-                <p>HHCBD là doanh nghiệp tư nhân đầu tư 
-			vào lĩnh vực bất động sản nghỉ dưỡng 
-			hàng đầu Việt Nam. Được đánh giá là doanh nghiệp đi đầu chúng tôi luôn tự tin mang đến những dịch vụ tốt nhất với đẳng cấp 5 sao.
-                </p>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-                <img src="./img/06_otil.jpg" alt="Cơ sở hạ tầng">
-            </div>
-        </div>
-    </div>
-<div class="container intros" id="service">
-        <div class="row row1">
-            <div class="col-xs-12 col-sm-6">
-                <hr style="float:left; width:20em; border-top: 0.1em gray solid">
-                <div style="clear: both;"></div>
-                <h1>Lịch sử phát triển</h1>
-                <p>HHCBD có tiền thân là công ty bánh kẹo hùng vương là doanh nghiệp tư nhân, với sự lãnh đạo và dẫn dắt bởi cha đẻ là doanh nhân trẻ Hoàng Huy.
-			Ông đã có những bước ngoặt mang tính lịch sử khi đầu tư vào kinh doanh bất động sản vào những năm khủng hoảng về kinh tế.
-                </p>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-                <img src="./img/batdongsan3-1551154606_750x0.jpg" alt="tầm nhìn kinh tế">
-            </div>
-        </div>
-    </div>  
-<div class="container intros" id="service">
-        <div class="row row1">
-            <div class="col-xs-12 col-sm-6">
-                <hr style="float:left; width:20em; border-top: 0.1em gray solid">
-                <div style="clear: both;"></div>
-                <h1>Những bước ngoặt lịch sử</h1>
-                <p>Tưởng chừng sẽ phải dừng bước trước những suy tính của mình nhưng doanh nhân 
-			trẻ đã có những bước đi đúng đắn đó là tạo dựng hệ thống luxury hotel giúp 
-			công ty ngày một lớn mạnh hơn đưa vị thế doanh nghiệp lên tầm thế giới
-                </p>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-                <img src="./img/vingroup.jpg" alt="tầm nhìn kinh tế">
-            </div>
-        </div>
-    </div> 
     <section id="boxes">
       <div class="container">
         <div class="box">
